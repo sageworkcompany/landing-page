@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="SageWorks">
+  <rect width="120" height="120" rx="28" fill="#16262E"></rect>
+  <g transform="translate(10,10)">
+    <g stroke="#3CBBB1" stroke-width="4" stroke-linecap="round" opacity="0.6">
+      <line x1="50" y1="50" x2="50" y2="15"></line>
+      <line x1="50" y1="50" x2="19.69" y2="67.5"></line>
+      <line x1="50" y1="50" x2="80.31" y2="67.5"></line>
+    </g>
+    <polygon points="50,15 19.69,32.5 19.69,67.5 50,85 80.31,67.5 80.31,32.5" stroke="#3CBBB1" stroke-width="6" stroke-linejoin="round" fill="none"></polygon>
+    <g fill="#3CBBB1">
+      <circle cx="50" cy="15" r="5"></circle>
+      <circle cx="19.69" cy="67.5" r="5"></circle>
+      <circle cx="80.31" cy="67.5" r="5"></circle>
+    </g>
+    <circle cx="50" cy="50" r="9" fill="#6883BA" stroke="#16262E" stroke-width="2.5"></circle>
+  </g>
+</svg>
