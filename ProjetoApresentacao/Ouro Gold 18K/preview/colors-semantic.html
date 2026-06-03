@@ -1,0 +1,17 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--paper);}
+  .wrap{padding:28px 32px;display:flex;flex-direction:column;gap:12px;}
+  .row{display:flex;align-items:center;gap:14px;}
+  .dot{width:34px;height:34px;border-radius:var(--r-sm);flex:none;}
+  .pill{font-family:var(--font-sans);font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:var(--r-pill);}
+  .n{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--espresso);width:90px;}
+  .h{font-family:var(--font-sans);font-size:11.5px;color:var(--taupe);}
+</style></head>
+<body><div class="wrap">
+  <div class="row"><div class="dot" style="background:var(--success)"></div><div class="n">Success</div><span class="pill" style="background:var(--success-bg);color:var(--success)">Em estoque</span><div class="h">#5B7355</div></div>
+  <div class="row"><div class="dot" style="background:var(--error)"></div><div class="n">Error</div><span class="pill" style="background:var(--error-bg);color:var(--error)">Esgotado</span><div class="h">#9E4A33</div></div>
+  <div class="row"><div class="dot" style="background:var(--info)"></div><div class="n">Info</div><span class="pill" style="background:var(--info-bg);color:var(--info)">Pré-venda</span><div class="h">#4A6670</div></div>
+  <div class="row"><div class="dot" style="background:var(--sale)"></div><div class="n">Sale</div><span class="pill" style="background:var(--sale);color:#fff">-20%</span><div class="h">#9E4A33 · tags off</div></div>
+</div></body></html>

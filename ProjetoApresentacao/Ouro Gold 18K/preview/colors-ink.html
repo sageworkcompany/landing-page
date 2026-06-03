@@ -1,0 +1,17 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--paper);}
+  .wrap{padding:28px 32px;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .sw{display:flex;flex-direction:column;gap:8px;}
+  .chip{height:78px;border-radius:var(--r-md);border:1px solid var(--line);display:flex;align-items:flex-end;padding:10px;}
+  .chip span{font-family:var(--font-display);font-size:22px;}
+  .n{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--espresso);}
+  .h{font-family:var(--font-sans);font-size:11.5px;color:var(--taupe);}
+</style></head>
+<body><div class="wrap"><div class="grid">
+  <div class="sw"><div class="chip" style="background:var(--espresso)"><span style="color:var(--on-dark)">Aa</span></div><div class="n">Espresso</div><div class="h">#2A231C · texto principal</div></div>
+  <div class="sw"><div class="chip" style="background:var(--mocha)"><span style="color:#fff">Aa</span></div><div class="n">Mocha</div><div class="h">#5F5448 · texto secundário</div></div>
+  <div class="sw"><div class="chip" style="background:var(--taupe)"><span style="color:#fff">Aa</span></div><div class="n">Taupe</div><div class="h">#978A78 · muted</div></div>
+</div></div></body></html>

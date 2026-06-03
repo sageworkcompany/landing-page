@@ -1,0 +1,289 @@
+/* ============================================================
+   OURO GOLD 18K — Design Foundations
+   Colors + Typography tokens, plus semantic element styles.
+   Aesthetic: modern minimalist luxury jewelry. Warm champagne
+   surfaces, espresso ink, antique 18K gold as the throughline.
+   ============================================================ */
+
+/* Webfonts — loaded from Google Fonts.
+   Display: Cormorant Garamond (high-contrast elegant serif)
+   UI/Body: Mulish (quiet neutral humanist sans) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Mulish:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ---------- Surfaces (warm, airy) ---------- */
+  --paper:        #FCFAF6; /* primary background */
+  --champagne:    #F4EEE3; /* secondary surface, section bands */
+  --sand:         #E9DFCF; /* tertiary surface, hover fills */
+  --gold-wash:    #F0E6D2; /* faint gold tint background */
+
+  /* ---------- Ink (warm near-blacks) ---------- */
+  --espresso:     #2A231C; /* primary text + dark surfaces */
+  --mocha:        #5F5448; /* secondary text */
+  --taupe:        #978A78; /* muted / tertiary text, large only */
+
+  /* ---------- Lines ---------- */
+  --line:         #E4DACB; /* hairline dividers, default borders */
+  --line-strong:  #CBBFA8; /* emphasized borders */
+
+  /* ---------- Gold (the 18K throughline) ---------- */
+  --gold:         #AE893F; /* primary accent */
+  --gold-deep:    #8C6C2C; /* hover / pressed accent */
+  --gold-light:   #D8C194; /* light accent, on dark surfaces */
+  --gold-foil:    linear-gradient(135deg,#C9A24B 0%,#A8842C 48%,#E3CD93 100%); /* reserved: foil shimmer, sparing use */
+
+  /* ---------- On-dark ---------- */
+  --on-dark:      #F4EEE3; /* text on espresso surfaces */
+  --on-dark-mut:  #B7A998; /* muted text on espresso */
+
+  /* ---------- Semantic (muted to match palette) ---------- */
+  --success:      #5B7355; --success-bg: #EAEFE6;
+  --error:        #9E4A33; --error-bg:   #F6E7E1;
+  --info:         #4A6670; --info-bg:    #E6EDEF;
+  --sale:         #9E4A33; /* sale / off tags */
+
+  /* ---------- Type families ---------- */
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans:    'Mulish', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* ---------- Type scale (px) ---------- */
+  --t-display-1: 72px;
+  --t-display-2: 56px;
+  --t-h1: 44px;
+  --t-h2: 34px;
+  --t-h3: 26px;
+  --t-h4: 21px;
+  --t-body-lg: 18px;
+  --t-body: 16px;
+  --t-body-sm: 14px;
+  --t-caption: 12.5px;
+  --t-eyebrow: 12px;
+
+  /* ---------- Tracking ---------- */
+  --track-eyebrow: 0.22em; /* uppercase labels, nav */
+  --track-wide:    0.08em;
+  --track-tight:  -0.01em;
+
+  /* ---------- Spacing (4px base) ---------- */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+  --sp-9: 96px; --sp-10: 128px;
+
+  /* ---------- Radii (mostly squared — luxury restraint) ---------- */
+  --r-xs: 1px;
+  --r-sm: 2px;
+  --r-md: 4px;
+  --r-lg: 8px;
+  --r-pill: 999px;
+
+  /* ---------- Shadows (soft, warm, sparing) ---------- */
+  --shadow-sm: 0 1px 2px rgba(42,35,28,0.04), 0 1px 1px rgba(42,35,28,0.03);
+  --shadow-md: 0 6px 18px rgba(42,35,28,0.07);
+  --shadow-lg: 0 18px 48px rgba(42,35,28,0.10);
+
+  /* ---------- Motion ---------- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 140ms;
+  --dur: 280ms;
+  --dur-slow: 520ms;
+
+  /* ---------- Layout ---------- */
+  --maxw: 1280px;
+  --maxw-narrow: 760px;
+}
+
+/* ============================================================
+   SEMANTIC ELEMENT STYLES
+   ============================================================ */
+
+.og-display-1, .og-display-2,
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--espresso);
+  font-weight: 500;
+  letter-spacing: var(--track-tight);
+  line-height: 1.08;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.og-display-1 { font-size: var(--t-display-1); line-height: 1.02; font-weight: 500; }
+.og-display-2 { font-size: var(--t-display-2); line-height: 1.05; }
+h1, .og-h1 { font-size: var(--t-h1); }
+h2, .og-h2 { font-size: var(--t-h2); }
+h3, .og-h3 { font-size: var(--t-h3); }
+h4, .og-h4 { font-size: var(--t-h4); line-height: 1.2; }
+
+/* Italic serif — editorial accent, used for emphasis words in headings */
+.og-emph { font-style: italic; font-weight: 400; }
+
+/* Eyebrow / overline — the fashion-house tracked uppercase label */
+.og-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--t-eyebrow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--track-eyebrow);
+  color: var(--gold);
+  line-height: 1;
+}
+
+/* Body */
+body, .og-body {
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  font-weight: 400;
+  line-height: 1.62;
+  color: var(--mocha);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.og-body-lg { font-size: var(--t-body-lg); line-height: 1.6; color: var(--mocha); }
+.og-body-sm { font-size: var(--t-body-sm); line-height: 1.55; }
+.og-caption { font-size: var(--t-caption); line-height: 1.4; color: var(--taupe); letter-spacing: 0.01em; }
+
+/* Inline link */
+.og-link {
+  color: var(--espresso);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: 1px;
+  transition: border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.og-link:hover { color: var(--gold-deep); border-color: var(--gold); }
+
+/* Price */
+.og-price {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--espresso);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+.og-price-old { color: var(--taupe); text-decoration: line-through; font-weight: 400; }
+
+/* ============================================================
+   PRIMITIVE UTILITY CLASSES (used across previews + UI kit)
+   ============================================================ */
+
+/* Buttons */
+.og-btn {
+  font-family: var(--font-sans);
+  font-size: var(--t-body-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--track-wide);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: 14px 28px;
+  border: 1px solid transparent;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease),
+              border-color var(--dur) var(--ease), transform var(--dur-fast) var(--ease);
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+.og-btn:active { transform: translateY(1px); }
+
+.og-btn--primary { background: var(--espresso); color: var(--on-dark); border-color: var(--espresso); }
+.og-btn--primary:hover { background: var(--gold-deep); border-color: var(--gold-deep); color: #fff; }
+
+.og-btn--gold { background: var(--gold); color: #fff; border-color: var(--gold); }
+.og-btn--gold:hover { background: var(--gold-deep); border-color: var(--gold-deep); }
+
+.og-btn--outline { background: transparent; color: var(--espresso); border-color: var(--line-strong); }
+.og-btn--outline:hover { border-color: var(--espresso); background: var(--espresso); color: var(--on-dark); }
+
+.og-btn--ghost { background: transparent; color: var(--espresso); border-color: transparent; padding-left: 8px; padding-right: 8px; }
+.og-btn--ghost:hover { color: var(--gold-deep); }
+
+.og-btn--sm { padding: 9px 18px; font-size: var(--t-caption); }
+.og-btn--lg { padding: 18px 40px; font-size: var(--t-body); }
+.og-btn--block { display: flex; width: 100%; }
+
+/* Chip / tag */
+.og-chip {
+  font-family: var(--font-sans);
+  font-size: var(--t-caption);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 6px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-pill);
+  color: var(--mocha);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease);
+}
+.og-chip:hover { border-color: var(--espresso); color: var(--espresso); }
+.og-chip--active { background: var(--espresso); border-color: var(--espresso); color: var(--on-dark); }
+
+/* Tag / badge (non-interactive) */
+.og-tag {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 5px 10px;
+  display: inline-block;
+  line-height: 1;
+}
+.og-tag--new { background: var(--espresso); color: var(--on-dark); }
+.og-tag--sale { background: var(--sale); color: #fff; }
+.og-tag--soft { background: var(--gold-wash); color: var(--gold-deep); }
+
+/* Inputs */
+.og-input {
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  color: var(--espresso);
+  background: var(--paper);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  padding: 13px 15px;
+  width: 100%;
+  transition: border-color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+}
+.og-input::placeholder { color: var(--taupe); }
+.og-input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(174,137,63,0.14); }
+.og-label {
+  font-family: var(--font-sans);
+  font-size: var(--t-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--mocha);
+  display: block;
+  margin-bottom: 7px;
+}
+
+/* Card */
+.og-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+}
+
+/* Divider */
+.og-rule { height: 1px; background: var(--line); border: 0; }
+
+/* Hairline gold accent rule (decorative) */
+.og-rule--gold { height: 1px; background: var(--gold); width: 48px; border: 0; }
+
+/* Section band helpers */
+.og-band-champagne { background: var(--champagne); }
+.og-band-dark { background: var(--espresso); color: var(--on-dark); }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

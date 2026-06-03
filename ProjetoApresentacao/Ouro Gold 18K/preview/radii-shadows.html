@@ -1,0 +1,27 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--paper);}
+  .wrap{padding:28px 32px;}
+  .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:24px;}
+  .sw{display:flex;flex-direction:column;gap:8px;align-items:center;}
+  .box{width:100%;height:58px;background:var(--champagne);border:1px solid var(--line-strong);}
+  .n{font-family:var(--font-sans);font-size:12px;font-weight:600;color:var(--espresso);}
+  .h{font-family:var(--font-sans);font-size:11px;color:var(--taupe);}
+  .sh-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .sh{height:62px;background:var(--paper);border-radius:var(--r-md);display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;font-family:var(--font-sans);font-size:11.5px;color:var(--taupe);}
+</style></head>
+<body><div class="wrap">
+<div class="grid">
+  <div class="sw"><div class="box" style="border-radius:var(--r-xs)"></div><div class="n">xs</div><div class="h">1px</div></div>
+  <div class="sw"><div class="box" style="border-radius:var(--r-sm)"></div><div class="n">sm</div><div class="h">2px</div></div>
+  <div class="sw"><div class="box" style="border-radius:var(--r-md)"></div><div class="n">md</div><div class="h">4px</div></div>
+  <div class="sw"><div class="box" style="border-radius:var(--r-lg)"></div><div class="n">lg</div><div class="h">8px</div></div>
+  <div class="sw"><div class="box" style="border-radius:var(--r-pill)"></div><div class="n">pill</div><div class="h">999px</div></div>
+</div>
+<div class="sh-row">
+  <div class="sh" style="box-shadow:var(--shadow-sm)">shadow-sm</div>
+  <div class="sh" style="box-shadow:var(--shadow-md)">shadow-md</div>
+  <div class="sh" style="box-shadow:var(--shadow-lg)">shadow-lg</div>
+</div>
+</div></body></html>

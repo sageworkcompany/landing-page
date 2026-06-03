@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ouro Gold 18K — Vitrine (PDF)</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="kit.css">
+<style>
+  /* ---- Print/paged setup: wide page keeps the desktop layout intact ---- */
+  @page { size: 1280px 1640px; margin: 0; }
+  html, body { background: var(--paper); }
+
+  .print-screen { position: relative; }
+  .print-screen + .print-screen { break-before: page; }
+
+  /* Section divider label so each page reads clearly in the PDF */
+  .print-tab {
+    font-family: var(--font-sans); font-size: 11px; font-weight: 700;
+    letter-spacing: .22em; text-transform: uppercase; color: var(--gold);
+    background: var(--gold-wash); border-bottom: 1px solid var(--line);
+    padding: 9px 32px;
+  }
+
+  /* Static header in print — no sticky/blur artifacts */
+  .k-header { position: static !important; }
+  .k-header-main { background: var(--paper) !important; backdrop-filter: none !important; }
+
+  /* Force the desktop nav on (page box is 1280px wide) */
+  .k-nav { display: flex !important; }
+  .k-only-mobile { display: none !important; }
+  .k-only-desk { display: flex !important; }
+
+  @media print {
+    * , *::before, *::after {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      animation-delay: -99s !important; animation-duration: .001s !important;
+      animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+      animation-play-state: running !important; transition-duration: 0s !important;
+    }
+    /* Avoid splitting key blocks across pages */
+    .k-pc, .k-order, .k-trust-item, .k-addr, .k-coll-card, .k-line,
+    .k-form-card, .k-summary, .k-cat-tile, .k-editorial-text { break-inside: avoid; }
+    .k-sec-head { break-after: avoid; }
+  }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script src="data.js"></script>
+<script type="text/babel" src="Icon.jsx"></script>
+<script type="text/babel" src="components.jsx"></script>
+<script type="text/babel" src="Home.jsx"></script>
+<script type="text/babel" src="Category.jsx"></script>
+<script type="text/babel" src="Product.jsx"></script>
+<script type="text/babel" src="Cart.jsx"></script>
+<script type="text/babel" src="Checkout.jsx"></script>
+<script type="text/babel" src="Account.jsx"></script>
+<script type="text/babel" src="Collection.jsx"></script>
+<script type="text/babel">
+/* Print entry — renders every screen stacked, one per page, with a static
+   context (pre-filled cart + wishlist) so cart/checkout/account show content. */
+function PrintApp() {
+  const cart = [
+    { p: OG.byId('aurora'), qty: 1, size: '16' },
+    { p: OG.byId('mare'),   qty: 2, size: '16' },
+  ];
+  const noop = () => {};
+  const ctx = {
+    screen: '', nav: noop, openProduct: noop,
+    cart, addToCart: noop, setQty: noop, removeFromCart: noop, clearCart: noop,
+    cartCount: cart.reduce((s, l) => s + l.qty, 0),
+    wishlist: ['riviera', 'serena'], toggleWish: noop, openSearch: noop,
+  };
+
+  const pages = [
+    { label: 'Home · Vitrine',          el: <HomeScreen />, chrome: true },
+    { label: 'Coleção · Editorial',     el: <CollectionScreen params={{ coll: OG.collections[0] }} />, chrome: true },
+    { label: 'Categoria · Listagem',    el: <CategoryScreen params={{ cat: 'aneis' }} />, chrome: true },
+    { label: 'Produto',                 el: <ProductScreen params={{ product: OG.byId('aurora') }} />, chrome: true },
+    { label: 'Carrinho',                el: <CartScreen />, chrome: true },
+    { label: 'Checkout',                el: <CheckoutScreen />, chrome: false },
+    { label: 'Área do cliente',         el: <AccountScreen />, chrome: true },
+  ];
+
+  return (
+    <ShopCtx.Provider value={ctx}>
+      {pages.map((pg, i) => (
+        <div className="print-screen" key={i}>
+          <div className="print-tab">{pg.label}</div>
+          {pg.chrome && <Header />}
+          {pg.el}
+        </div>
+      ))}
+      <Footer />
+    </ShopCtx.Provider>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<PrintApp />);
+
+/* Auto-open the print dialog once fonts + layout are ready */
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(function () {
+  setTimeout(function () { window.print(); }, 700);
+});
+</script>
+</body>
+</html>

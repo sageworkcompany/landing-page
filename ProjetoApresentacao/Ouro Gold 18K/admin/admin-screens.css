@@ -1,0 +1,79 @@
+/* ============================================================
+   Ouro Gold 18K — Admin screen-specific styles
+   ============================================================ */
+
+/* alerts (dashboard) */
+.ad-alert { display: flex; align-items: center; gap: 10px; padding: 11px 13px; border-radius: var(--ad-r-sm); font-size: 13px; border: 1px solid; }
+.ad-alert b { font-weight: 700; }
+.ad-alert-warn  { background: var(--ad-warn-bg);  color: var(--ad-warn);  border-color: var(--ad-warn-line); }
+.ad-alert-error { background: var(--ad-error-bg); color: var(--ad-error); border-color: var(--ad-error-line); }
+.ad-alert-info  { background: var(--ad-info-bg);  color: var(--ad-info);  border-color: var(--ad-info-line); }
+
+/* timeline (order drawer) */
+.ad-timeline { display: flex; flex-direction: column; }
+.ad-tl-item { display: flex; gap: 13px; padding-bottom: 16px; position: relative; }
+.ad-tl-item:last-child { padding-bottom: 0; }
+.ad-tl-dot { width: 12px; height: 12px; border-radius: 999px; background: var(--ad-gold); flex: none; margin-top: 3px; position: relative; box-shadow: 0 0 0 3px var(--ad-gold-wash); }
+.ad-tl-item:not(:last-child) .ad-tl-dot::after { content: ""; position: absolute; left: 50%; top: 14px; transform: translateX(-50%); width: 1.5px; height: calc(100% + 14px); background: var(--ad-line-2); }
+
+/* coupon code chip */
+.ad-coupon { display: inline-block; font-weight: 800; letter-spacing: .04em; padding: 4px 10px; background: var(--ad-gold-wash); color: var(--ad-gold-deep); border: 1px dashed var(--ad-gold-light); border-radius: var(--ad-r-sm); font-size: 12.5px; }
+
+/* product media (drawer) */
+.ad-media-main { width: 96px; height: 96px; border-radius: var(--ad-r-md); background: var(--ad-gold-wash); color: var(--ad-gold-deep); display: flex; align-items: center; justify-content: center; flex: none; border: 1px solid var(--ad-line); }
+.ad-media-thumb { width: 64px; height: 96px; border-radius: var(--ad-r-md); background: var(--ad-surface-2); color: var(--ad-ink-3); display: flex; align-items: center; justify-content: center; border: 1px solid var(--ad-line); }
+.ad-media-add { width: 64px; height: 96px; border-radius: var(--ad-r-md); border: 1px dashed var(--ad-line-2); color: var(--ad-ink-3); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; cursor: pointer; }
+.ad-media-add:hover { border-color: var(--ad-gold); color: var(--ad-gold-deep); }
+
+/* banner thumb + drag (storefront) */
+.ad-banner-thumb { width: 64px; height: 42px; border-radius: var(--ad-r-sm); background: var(--ad-gold-wash); color: var(--ad-gold-deep); display: flex; align-items: center; justify-content: center; flex: none; border: 1px solid var(--ad-line); }
+.ad-drag { background: none; border: 0; color: var(--ad-line-2); cursor: grab; display: flex; padding: 4px; }
+.ad-drag:hover { color: var(--ad-ink-3); }
+
+/* settings layout */
+.ad-settings { display: grid; grid-template-columns: 230px 1fr; gap: var(--ad-6); align-items: start; }
+.ad-settings-nav { display: flex; flex-direction: column; gap: 2px; position: sticky; top: calc(var(--ad-topbar-h) + var(--ad-6)); }
+.ad-set-link { display: flex; align-items: center; gap: 11px; padding: 11px 13px; border: 0; background: none; border-radius: var(--ad-r-sm); font-family: var(--ad-font); font-size: 13.5px; font-weight: 700; color: var(--ad-ink-2); cursor: pointer; text-align: left; transition: background var(--ad-dur) var(--ad-ease), color var(--ad-dur) var(--ad-ease); }
+.ad-set-link:hover { background: var(--ad-surface-3); color: var(--ad-ink); }
+.ad-set-link[data-on="true"] { background: var(--ad-surface); color: var(--ad-gold-deep); box-shadow: var(--ad-shadow-sm); border: 1px solid var(--ad-line); }
+@media (max-width: 860px) { .ad-settings { grid-template-columns: 1fr; } .ad-settings-nav { flex-direction: row; flex-wrap: wrap; position: static; } }
+
+/* sidebar scrim (mobile) */
+.ad-side-scrim { display: none; }
+@media (max-width: 920px) {
+  .ad-side-scrim { display: block; position: fixed; inset: 0; background: rgba(26,22,17,0.5); z-index: 85; }
+  #ad-burger { display: inline-flex !important; }
+}
+
+/* ============================================================
+   LOGIN
+   ============================================================ */
+.ad-login { min-height: 100vh; display: grid; grid-template-columns: 1.05fr 1fr; background: var(--ad-canvas); }
+.ad-login-aside { background: var(--ad-sidebar); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 40px; }
+.ad-login-aside::before { content: ""; position: absolute; width: 460px; height: 460px; border: 1px solid rgba(216,193,148,0.14); border-radius: 999px; top: -120px; right: -120px; }
+.ad-login-aside::after { content: ""; position: absolute; width: 300px; height: 300px; border: 1px solid rgba(216,193,148,0.10); border-radius: 999px; bottom: -80px; left: -60px; }
+.ad-login-aside-in { position: relative; z-index: 1; max-width: 380px; }
+.ad-login-mark { width: 60px; height: 60px; border: 1px solid var(--ad-gold); display: flex; align-items: center; justify-content: center; position: relative; margin-bottom: 26px; }
+.ad-login-mark::after { content: ""; position: absolute; inset: 4px; border: 1px solid rgba(216,193,148,0.45); }
+.ad-login-mark span { font-family: var(--ad-serif); font-weight: 600; font-size: 30px; color: var(--ad-gold-light); }
+.ad-login-wm { font-family: var(--ad-serif); font-weight: 600; font-size: 40px; letter-spacing: .12em; color: var(--ad-side-active-ink); margin: 0; line-height: 1; }
+.ad-login-sub { font-size: 11px; font-weight: 700; letter-spacing: .28em; color: var(--ad-side-ink-2); margin-top: 10px; }
+.ad-login-tagline { color: var(--ad-side-ink); font-size: 15px; line-height: 1.6; margin: 28px 0 0; }
+.ad-login-foot { margin-top: 40px; display: flex; flex-direction: column; gap: 12px; }
+.ad-login-foot div { display: flex; align-items: center; gap: 10px; color: var(--ad-side-ink); font-size: 13.5px; }
+.ad-login-foot div :first-child { color: var(--ad-gold-light); }
+
+.ad-login-main { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; }
+.ad-login-card { background: var(--ad-surface); border: 1px solid var(--ad-line); border-radius: var(--ad-r-lg); padding: 38px 36px; width: 100%; max-width: 420px; box-shadow: var(--ad-shadow-md); }
+.ad-2fa { display: flex; gap: 10px; justify-content: space-between; }
+.ad-2fa-input { width: 100%; height: 58px; text-align: center; font-size: 24px; font-weight: 700; border: 1px solid var(--ad-line-2); border-radius: var(--ad-r-sm); background: var(--ad-surface-2); color: var(--ad-ink); }
+.ad-2fa-input:focus { outline: none; border-color: var(--ad-gold); box-shadow: 0 0 0 3px var(--ad-ring); }
+@media (max-width: 860px) { .ad-login { grid-template-columns: 1fr; } .ad-login-aside { display: none; } }
+
+/* entrance — base state is fully visible; the rise is a subtle enhancement
+   that never hides content (no opacity:0 fill that could persist in
+   inactive tabs / capture / print). */
+@media (prefers-reduced-motion: no-preference) {
+  .ad-content > * { animation: ad-rise .32s var(--ad-ease); }
+}
+@keyframes ad-rise { from { transform: translateY(7px); } to { transform: none; } }

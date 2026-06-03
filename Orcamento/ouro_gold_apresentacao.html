@@ -1,0 +1,2281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ouro Gold 18K — Proposta Comercial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8CC80;
+  --gold-pale: #F5EDD3;
+  --gold-deep: #8B6914;
+  --ivory: #FDFAF4;
+  --ivory-2: #F7F1E3;
+  --ivory-3: #EDE4CC;
+  --ink: #1A1610;
+  --ink-2: #2E2720;
+  --muted: #7A6E5C;
+  --muted-light: #A89F8C;
+  --white: #FFFFFF;
+  --border: rgba(201,168,76,0.18);
+  --border-strong: rgba(201,168,76,0.38);
+  --shadow: 0 2px 32px rgba(139,105,20,0.10);
+  --shadow-card: 0 1px 16px rgba(139,105,20,0.08);
+  --radius: 16px;
+  --radius-sm: 8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--ivory);
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--ivory-2); }
+::-webkit-scrollbar-thumb { background: var(--gold-light); border-radius: 99px; }
+
+/* ─── NAV ─────────────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(253,250,244,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2.5rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  color: var(--gold-deep);
+}
+
+.nav-brand span { color: var(--ink-2); }
+
+.nav-links {
+  display: flex;
+  gap: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0 1rem;
+  line-height: 64px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: .04em;
+  border-bottom: 2px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--gold-deep);
+  border-bottom-color: var(--gold);
+}
+
+.nav-badge {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  background: var(--gold-pale);
+  border: 1px solid var(--border-strong);
+  border-radius: 99px;
+  padding: 4px 14px;
+}
+
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+}
+@media (max-width: 600px) {
+  nav { padding: 0 1.25rem; }
+  .nav-badge { display: none; }
+}
+
+/* ─── SECTIONS ────────────────────────────────────────────── */
+.section {
+  padding: 6rem 0;
+}
+
+.section:nth-child(even) {
+  background: var(--ivory-2);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0 1.25rem; }
+  .section { padding: 4rem 0; }
+}
+
+/* ─── DIVIDER ────────────────────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 3.5rem;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-strong), transparent);
+}
+
+.divider-diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* ─── SECTION LABEL ──────────────────────────────────────── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 1rem;
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* ─── HERO ───────────────────────────────────────────────── */
+#hero {
+  background: var(--ivory);
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-bg-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.12);
+}
+
+.hero-bg-ring:nth-child(2) { width: 700px; height: 700px; top: -200px; right: -150px; }
+.hero-bg-ring:nth-child(3) { width: 500px; height: 500px; top: -100px; right: -50px; border-color: rgba(201,168,76,0.08); }
+.hero-bg-ring:nth-child(4) { width: 300px; height: 300px; top: 0; right: 50px; border-color: rgba(201,168,76,0.05); }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 6rem 0;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold-pale);
+  border: 1px solid var(--border-strong);
+  border-radius: 99px;
+  padding: 6px 18px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 2rem;
+}
+
+.hero-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(.8); }
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  max-width: 680px;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-deep);
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.65;
+  margin-bottom: 3rem;
+}
+
+.hero-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  max-width: 600px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.hero-kpi {
+  background: var(--ivory);
+  padding: 1.25rem 1.5rem;
+  transition: background .2s;
+}
+
+.hero-kpi:hover { background: var(--gold-pale); }
+
+.hero-kpi-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--gold-deep);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-kpi-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+}
+
+@media (max-width: 700px) {
+  .hero-kpis { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ─── SAGEWORKS BRAND ────────────────────────────────────── */
+.sage-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2.5rem;
+}
+
+.sage-logo-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--ink-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sage-logo-mark svg {
+  width: 18px;
+  height: 18px;
+}
+
+.sage-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: var(--ink-2);
+}
+
+.sage-logo-text small {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  margin-top: -2px;
+}
+
+/* ─── CARDS ──────────────────────────────────────────────── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--border-strong);
+}
+
+/* ─── PROTÓTIPOS NAVEGÁVEIS ──────────────────────────────── */
+.proto-strip {
+  background: var(--ink);
+  padding: 3rem 0;
+}
+.proto-strip .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.proto-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: .7;
+}
+.proto-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px,3vw,28px);
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  letter-spacing: -.01em;
+}
+.proto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 680px;
+}
+.proto-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .75rem;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(201,168,76,.18);
+  border-radius: 16px;
+  padding: 1.75rem 1.75rem 1.5rem;
+  text-decoration: none;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.proto-card:hover {
+  background: rgba(201,168,76,.08);
+  border-color: rgba(201,168,76,.45);
+  transform: translateY(-3px);
+}
+.proto-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: rgba(201,168,76,.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.proto-card-icon svg { stroke: var(--gold); }
+.proto-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -.01em;
+}
+.proto-card-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.65;
+}
+.proto-card-cta {
+  margin-top: .25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: .04em;
+}
+.proto-card-cta svg { stroke: var(--gold); }
+@media (max-width: 520px) {
+  .proto-grid { grid-template-columns: 1fr; }
+}
+
+/* ─── MODULE OVERVIEW GRID ───────────────────────────────── */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.module-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  cursor: pointer;
+  transition: transform .25s, box-shadow .25s, border-color .25s, background .2s;
+  box-shadow: var(--shadow-card);
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--gold);
+  background: var(--gold-pale);
+}
+
+.module-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--gold-pale);
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  color: var(--gold-deep);
+  transition: background .2s, color .2s;
+}
+
+.module-card:hover .module-icon {
+  background: var(--gold);
+  color: var(--white);
+}
+
+.module-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.module-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ─── MODULE DETAIL ──────────────────────────────────────── */
+.module-section {
+  padding: 5.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.module-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 800px) {
+  .module-header { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+.module-header-left { }
+
+.module-title-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.module-title-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--gold-pale);
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--gold-deep);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.module-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.module-title span {
+  color: var(--gold-deep);
+}
+
+.module-intro {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 2rem;
+}
+
+.module-objective {
+  background: var(--gold-pale);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+}
+
+.module-objective-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: .75rem;
+}
+
+.module-objective p {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.65;
+}
+
+/* ─── FEATURES LIST ──────────────────────────────────────── */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+}
+
+@media (max-width: 700px) {
+  .features-grid { grid-template-columns: 1fr; }
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.feature-item::before {
+  content: '◆';
+  color: var(--gold);
+  font-size: 8px;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* ─── FLOW STEPS ─────────────────────────────────────────── */
+.flow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 2rem 0;
+}
+
+.flow-step {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.flow-node {
+  background: var(--white);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: background .2s, color .2s, border-color .2s;
+}
+
+.flow-step:first-child .flow-node {
+  background: var(--gold);
+  border-color: var(--gold-deep);
+  color: var(--white);
+}
+
+.flow-arrow {
+  width: 32px;
+  text-align: center;
+  color: var(--gold);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .flow { flex-direction: column; align-items: flex-start; }
+  .flow-arrow { transform: rotate(90deg); }
+}
+
+/* ─── BENEFITS ───────────────────────────────────────────── */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.benefit-card {
+  background: var(--ivory);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1.25rem;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.benefit-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+.benefit-text {
+  font-size: 13px;
+  color: var(--ink-2);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+/* ─── SECTION HEADER ─────────────────────────────────────── */
+.section-header {
+  max-width: 600px;
+  margin-bottom: 3.5rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: .75rem;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+/* ─── PLANS GRID ────────────────────────────────────────── */
+.plans-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .plans-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+}
+
+.plan-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  transition: box-shadow .25s;
+}
+
+.plan-card:hover {
+  box-shadow: 0 4px 48px rgba(139,105,20,0.14);
+}
+
+.plan-card.featured {
+  border-color: var(--gold);
+  box-shadow: 0 4px 40px rgba(201,168,76,0.22);
+}
+
+.plan-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 4px 18px;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.plan-header { text-align: center; }
+
+.plan-tier {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: .5rem;
+}
+
+.plan-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+.plan-price-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+}
+
+.plan-currency {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.plan-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--gold-deep);
+  line-height: 1;
+}
+
+.plan-period {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.plan-desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: .75rem;
+  line-height: 1.5;
+}
+
+.plan-divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.plan-modules { display: flex; flex-direction: column; gap: .1rem; }
+
+.plan-module-group {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  padding: .9rem 0 .3rem;
+}
+
+.plan-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: .4rem 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.plan-item.on  { color: var(--ink-2); }
+.plan-item.off { color: var(--muted-light); text-decoration: line-through; }
+
+.plan-check {
+  flex-shrink: 0;
+  margin-top: 1px;
+  width: 16px;
+  height: 16px;
+}
+
+.plan-item.on  .plan-check { color: var(--gold); }
+.plan-item.off .plan-check { color: var(--muted-light); }
+
+.plan-cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: .85rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-decoration: none;
+  cursor: default;
+  transition: background .2s, color .2s;
+}
+
+.plan-card.featured .plan-cta {
+  background: var(--gold);
+  color: var(--white);
+  border: 1.5px solid var(--gold);
+}
+
+.plan-card:not(.featured) .plan-cta {
+  background: transparent;
+  color: var(--gold-deep);
+  border: 1.5px solid var(--border-strong);
+}
+
+.plan-card.featured .plan-cta:hover { background: var(--gold-deep); border-color: var(--gold-deep); }
+.plan-card:not(.featured) .plan-cta:hover { background: var(--gold-pale); }
+
+/* ─── CLOSING GRID ───────────────────────────────────────── */
+.closing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .closing-grid { grid-template-columns: 1fr; }
+}
+
+.closing-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+}
+
+.closing-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gold-deep);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.closing-card-title::before {
+  content: '';
+  width: 3px;
+  height: 20px;
+  background: var(--gold);
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+
+.closing-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.closing-list li {
+  font-size: 14px;
+  color: var(--ink-2);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.closing-list li::before {
+  content: '◆';
+  color: var(--gold);
+  font-size: 7px;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+footer {
+  background: var(--ink-2);
+  padding: 3.5rem 0;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: .05em;
+  margin-bottom: .5rem;
+}
+
+.footer-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,.4);
+  font-style: italic;
+  letter-spacing: .04em;
+}
+
+.footer-divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(201,168,76,.3);
+  margin: 1.5rem auto;
+}
+
+.footer-client {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.25);
+}
+
+/* ─── REVEAL ANIMATION ────────────────────────────────────── */
+.rv {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.rv.in { opacity: 1; transform: none; }
+.rv-d1 { transition-delay: 80ms; }
+.rv-d2 { transition-delay: 160ms; }
+.rv-d3 { transition-delay: 240ms; }
+.rv-d4 { transition-delay: 320ms; }
+.rv-d5 { transition-delay: 400ms; }
+
+/* ─── GOLD ORNAMENT ──────────────────────────────────────── */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.ornament-line {
+  flex: 1;
+  height: 1px;
+  background: var(--gold-pale);
+  max-width: 40px;
+}
+
+/* ─── TWO COL LAYOUT ─────────────────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+@media (max-width: 800px) {
+  .two-col { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+.subhead {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ─── GATEWAY TABLE ──────────────────────────────────────── */
+.gw-wrap {
+  margin-top: 2.5rem;
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+}
+.gw-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.gw-table thead tr {
+  background: var(--gold);
+  color: var(--white);
+}
+.gw-table thead th {
+  padding: 11px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.gw-table thead th:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,.18);
+}
+.gw-table tbody tr {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  transition: background .15s;
+}
+.gw-table tbody tr:last-child { border-bottom: none; }
+.gw-table tbody tr:hover { background: var(--ivory); }
+.gw-table tbody td {
+  padding: 10px 16px;
+  color: var(--ink-2);
+  vertical-align: middle;
+}
+.gw-table tbody td:not(:last-child) {
+  border-right: 1px solid var(--border);
+}
+.gw-gateway-name {
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.gw-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: 2px 8px;
+  border-radius: 99px;
+  margin-left: 6px;
+  vertical-align: middle;
+  background: var(--gold-pale);
+  color: var(--gold-deep);
+  border: 1px solid var(--border-strong);
+}
+.gw-note {
+  margin-top: .75rem;
+  font-size: 12px;
+  color: var(--ink-2);
+  opacity: .8;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Sage<span>Works</span></div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#visao" id="nl-visao">Visão Geral</a></li>
+    <li><a href="#vitrine" id="nl-vitrine">Vitrine</a></li>
+    <li><a href="#financeiro" id="nl-financeiro">Financeiro</a></li>
+    <li><a href="#estoque" id="nl-estoque">Estoque</a></li>
+
+    <li><a href="#dashboard" id="nl-dashboard">Dashboard</a></li>
+    <li><a href="#whatsapp" id="nl-whatsapp">WhatsApp</a></li>
+    <li><a href="#planos" id="nl-planos">Planos</a></li>
+    <li><a href="#encerramento" id="nl-encerramento">Conclusão</a></li>
+  </ul>
+  <div class="nav-badge">Proposta Comercial</div>
+</nav>
+
+<!-- HERO / CAPA -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-bg-ring"></div>
+    <div class="hero-bg-ring"></div>
+    <div class="hero-bg-ring"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="sage-logo rv">
+        <div class="sage-logo-mark">
+          <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="9,1 17,5 17,13 9,17 1,13 1,5" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+            <polygon points="9,4 14,6.5 14,11.5 9,14 4,11.5 4,6.5" fill="#C9A84C" opacity=".25"/>
+            <circle cx="9" cy="9" r="2" fill="#C9A84C"/>
+          </svg>
+        </div>
+        <div class="sage-logo-text">
+          Sage Works
+          <small>Tecnologia & Inovação</small>
+        </div>
+      </div>
+
+      <div class="hero-eyebrow rv rv-d1">
+        <span class="hero-dot"></span>
+        Proposta de Solução Integrada de Gestão
+      </div>
+
+      <h1 class="hero-title rv rv-d2">
+        Ouro Gold <em>18K</em><br>
+        Gestão que brilha como<br>o seu negócio.
+      </h1>
+
+      <p class="hero-subtitle rv rv-d3">
+        Tecnologia, controle e crescimento para impulsionar resultados — uma plataforma completa, construída para elevar cada aspecto da sua operação.
+      </p>
+
+      <div class="hero-kpis rv rv-d4">
+        <div class="hero-kpi">
+          <div class="hero-kpi-value">10</div>
+          <div class="hero-kpi-label">Módulos</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-value">100%</div>
+          <div class="hero-kpi-label">Integrado</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-value">360°</div>
+          <div class="hero-kpi-label">Visibilidade</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-value">∞</div>
+          <div class="hero-kpi-label">Escalável</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROTÓTIPOS NAVEGÁVEIS -->
+<div class="proto-strip">
+  <div class="container">
+    <div class="proto-label">Módulos iniciais — protótipos navegáveis</div>
+    <p class="proto-title">Explore como o sistema vai funcionar<br>antes mesmo de começar.</p>
+    <div class="proto-grid">
+      <a href="../ProjetoApresentacao/Ouro Gold 18K/ui_kits/website/index.html" class="proto-card" target="_blank">
+        <div class="proto-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <div class="proto-card-name">Vitrine Online</div>
+        <div class="proto-card-desc">Loja pública com catálogo, produto, carrinho e checkout. A experiência do cliente final.</div>
+        <div class="proto-card-cta">
+          Explorar vitrine
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+      </a>
+      <a href="../ProjetoApresentacao/Ouro Gold 18K/admin/index.html" class="proto-card" target="_blank">
+        <div class="proto-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+        </div>
+        <div class="proto-card-name">Painel Administrativo</div>
+        <div class="proto-card-desc">Dashboard, pedidos, estoque, financeiro e clientes. O controle total do negócio.</div>
+        <div class="proto-card-cta">
+          Explorar painel
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- VISÃO GERAL DOS MÓDULOS -->
+<section class="section" id="visao">
+  <div class="container">
+    <div class="divider rv"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div class="section-header rv">
+      <div class="section-label">Plataforma Integrada</div>
+      <h2 class="section-title">Visão Geral da Solução</h2>
+      <p class="section-subtitle">Todos os módulos que compõem a plataforma, projetados para trabalhar em conjunto e entregar uma visão unificada do seu negócio.</p>
+    </div>
+    <div class="modules-grid">
+      <a href="#vitrine" style="text-decoration:none">
+      <div class="module-card rv rv-d1">
+        <div class="module-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="module-name">Vitrine Online</div>
+        <div class="module-desc">Loja online completa para o cliente navegar, escolher e comprar a qualquer hora.</div>
+      </div></a>
+      <a href="#financeiro" style="text-decoration:none">
+      <div class="module-card rv rv-d1">
+        <div class="module-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="module-name">Financeiro</div>
+        <div class="module-desc">Controle total sobre receitas, despesas e fluxo de caixa em um único lugar.</div>
+      </div></a>
+      <a href="#estoque" style="text-decoration:none">
+      <div class="module-card rv rv-d2">
+        <div class="module-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
+        <div class="module-name">Estoque</div>
+        <div class="module-desc">Gestão precisa de inventário, entradas, saídas e rastreabilidade de produtos.</div>
+      </div></a>
+      <div class="module-card rv rv-d3">
+        <div class="module-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+        <div class="module-name">Compras</div>
+        <div class="module-desc">Automatize pedidos de compra, cotações e relacionamento com fornecedores.</div>
+      </div>
+      <div class="module-card rv rv-d2">
+        <div class="module-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="module-name">Clientes</div>
+        <div class="module-desc">Cadastro completo, segmentação e dados consolidados de toda a carteira.</div>
+      </div>
+      <div class="module-card rv rv-d3">
+        <div class="module-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></div>
+        <div class="module-name">Fornecedores</div>
+        <div class="module-desc">Centralize contratos, avaliações e histórico de cada fornecedor.</div>
+      </div>
+      <div class="module-card rv rv-d4">
+        <div class="module-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+        <div class="module-name">Relatórios e Indicadores</div>
+        <div class="module-desc">Análises completas para decisões estratégicas baseadas em dados reais.</div>
+      </div>
+      <div class="module-card rv rv-d1">
+        <div class="module-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="module-name">Usuários e Permissões</div>
+        <div class="module-desc">Controle de acesso granular, rastreabilidade e segurança de dados.</div>
+      </div>
+      <a href="#dashboard" style="text-decoration:none">
+      <div class="module-card rv rv-d2">
+        <div class="module-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="module-name">Dashboard Gerencial</div>
+        <div class="module-desc">Visão executiva em tempo real de todos os indicadores críticos do negócio.</div>
+      </div></a>
+      <a href="#whatsapp" style="text-decoration:none">
+      <div class="module-card rv rv-d3">
+        <div class="module-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg></div>
+        <div class="module-name">WhatsApp Automático</div>
+        <div class="module-desc">Mensagens automáticas pós-compra e alertas de estoque baixo direto no WhatsApp.</div>
+      </div></a>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULO: VITRINE -->
+<section class="section module-section" id="vitrine">
+  <div class="container">
+    <div class="divider rv"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div class="module-header">
+      <div class="module-header-left">
+        <div class="section-label rv">Módulo 01</div>
+        <div class="module-title-wrap rv rv-d1">
+          <div class="module-title-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <h2 class="module-title">Módulo <span>Vitrine Online</span></h2>
+        </div>
+        <p class="module-intro rv rv-d2">A loja online da Ouro Gold 18K — onde o cliente navega, descobre e compra com total autonomia, a qualquer hora do dia, de qualquer dispositivo.</p>
+        <div class="module-objective rv rv-d3">
+          <div class="module-objective-label">Objetivo</div>
+          <p>Transformar a vitrine digital em um canal de vendas completo e profissional, oferecendo ao cliente uma experiência de compra tão sofisticada quanto a joia que ele está adquirindo.</p>
+        </div>
+      </div>
+      <div class="rv rv-d2">
+        <div class="subhead">Principais funcionalidades</div>
+        <div class="features-grid">
+          <div class="feature-item">Catálogo com categorias e filtros avançados</div>
+          <div class="feature-item">Fotos em alta resolução com zoom</div>
+          <div class="feature-item">Busca inteligente com autocomplete</div>
+          <div class="feature-item">Carrinho persistente entre sessões</div>
+          <div class="feature-item">Checkout simplificado (PIX, cartão, boleto)</div>
+          <div class="feature-item">Parcelamento configurável sem juros</div>
+          <div class="feature-item">Cálculo de frete por CEP com API integrada</div>
+          <div class="feature-item">Área do cliente: histórico e rastreamento</div>
+          <div class="feature-item">Lista de desejos e favoritos</div>
+          <div class="feature-item">SEO em toda a vitrine</div>
+          <div class="feature-item">Design responsivo para mobile e tablet</div>
+          <div class="feature-item">SSL e conformidade com LGPD</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="subhead">Jornada do cliente</div>
+      <div class="flow">
+        <div class="flow-step"><div class="flow-node">Acessa a loja</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Navega / Busca</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Página do produto</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Carrinho</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Checkout e pagamento</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Acompanha o pedido</div></div>
+      </div>
+    </div>
+    <div class="rv rv-d2">
+      <div class="subhead" style="margin-top:2rem">Benefícios para a Ouro Gold 18K</div>
+      <div class="benefits-grid">
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Loja aberta 24h, vendendo mesmo fora do horário comercial</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Cliente compra com autonomia, sem precisar contatar a equipe</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">SEO que aumenta a visibilidade no Google e atrai novos clientes</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Rastreamento integrado que reduz chamados de "onde está meu pedido?"</div></div>
+      </div>
+    </div>
+
+    <!-- GATEWAYS DE PAGAMENTO -->
+    <div class="rv rv-d3">
+      <div class="subhead" style="margin-top:2.5rem">Gateways de pagamento disponíveis</div>
+      <p style="font-size:14px;color:var(--ink-2);margin-bottom:1.25rem">A plataforma integra com os principais gateways do mercado via API. A escolha é feita junto com a Ouro Gold 18K durante a implantação — sem custo adicional de integração.</p>
+      <div class="gw-wrap">
+        <table class="gw-table">
+          <thead>
+            <tr>
+              <th>Gateway</th>
+              <th>Cartão de Crédito</th>
+              <th>PIX</th>
+              <th>Boleto</th>
+              <th>Recebimento (cartão)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="gw-gateway-name">Stripe</span><span class="gw-badge">Global</span></td>
+              <td>3,99% + R$ 0,39 <span style="font-size:11px;opacity:.7">(nacional)</span></td>
+              <td>1,19%</td>
+              <td>R$ 3,45 / boleto</td>
+              <td>30 dias</td>
+            </tr>
+            <tr>
+              <td><span class="gw-gateway-name">Mercado Pago</span><span class="gw-badge">Popular</span></td>
+              <td>3,99% – 4,99% <span style="font-size:11px;opacity:.7">(conforme prazo)</span></td>
+              <td>0,99%</td>
+              <td>R$ 3,49 / boleto</td>
+              <td>Na hora a 30 dias</td>
+            </tr>
+            <tr>
+              <td><span class="gw-gateway-name">Efí Bank</span><span class="gw-badge">Developer</span></td>
+              <td>3,49% – 4,39% <span style="font-size:11px;opacity:.7">(à vista / parcelado)</span></td>
+              <td>1,19%</td>
+              <td>R$ 3,45 / boleto</td>
+              <td>31 dias</td>
+            </tr>
+            <tr>
+              <td><span class="gw-gateway-name">Pagar.me</span><span class="gw-badge">Stone</span></td>
+              <td>Sob consulta <span style="font-size:11px;opacity:.7">(negociável por volume)</span></td>
+              <td>1,19%</td>
+              <td>R$ 3,49 / boleto</td>
+              <td>30 dias</td>
+            </tr>
+            <tr>
+              <td><span class="gw-gateway-name">Asaas</span><span class="gw-badge">Recorrência</span></td>
+              <td>1,99% + R$ 0,49 <span style="font-size:11px;opacity:.7">(promocional)</span></td>
+              <td>R$ 1,89 / transação</td>
+              <td>R$ 1,89 / boleto</td>
+              <td>30 dias</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="gw-note">◆ Nenhum dos gateways cobra mensalidade ou taxa de setup para uso da API &nbsp;·&nbsp; As taxas listadas são cobradas diretamente pelo gateway ao lojista sobre cada transação concluída.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULO: FINANCEIRO -->
+<section class="section module-section" id="financeiro">
+  <div class="container">
+    <div class="divider rv"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div class="module-header">
+      <div class="module-header-left">
+        <div class="section-label rv">Módulo 02</div>
+        <div class="module-title-wrap rv rv-d1">
+          <div class="module-title-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h2 class="module-title">Módulo <span>Financeiro</span></h2>
+        </div>
+        <p class="module-intro rv rv-d2">Centralize toda a gestão financeira da empresa em um único lugar, garantindo maior controle sobre receitas, despesas e fluxo de caixa.</p>
+        <div class="module-objective rv rv-d3">
+          <div class="module-objective-label">Objetivo</div>
+          <p>Permitir uma visão clara da saúde financeira do negócio, reduzir a inadimplência e facilitar a tomada de decisões estratégicas com dados confiáveis e em tempo real.</p>
+        </div>
+      </div>
+      <div class="rv rv-d2">
+        <div class="subhead">Principais funcionalidades</div>
+        <div class="features-grid">
+          <div class="feature-item">Contas a pagar</div>
+          <div class="feature-item">Contas a receber</div>
+          <div class="feature-item">Fluxo de caixa</div>
+          <div class="feature-item">Conciliação financeira</div>
+          <div class="feature-item">Controle de despesas</div>
+          <div class="feature-item">Gestão de receitas</div>
+          <div class="feature-item">Relatórios financeiros</div>
+          <div class="feature-item">Alertas de vencimento</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="subhead">Fluxo de utilização</div>
+      <div class="flow">
+        <div class="flow-step"><div class="flow-node">Cadastro</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Lançamento</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Aprovação</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Controle</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Relatórios</div></div>
+      </div>
+    </div>
+    <div class="rv rv-d2">
+      <div class="subhead" style="margin-top:2rem">Benefícios para a Ouro Gold 18K</div>
+      <div class="benefits-grid">
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Melhor previsibilidade financeira e controle de caixa</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Menor risco de inadimplência com alertas automáticos</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Controle completo de todas as movimentações</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Relatórios financeiros em tempo real</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULO: ESTOQUE -->
+<section class="section module-section" id="estoque">
+  <div class="container">
+    <div class="divider rv"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div class="module-header">
+      <div class="module-header-left">
+        <div class="section-label rv">Módulo 03</div>
+        <div class="module-title-wrap rv rv-d1">
+          <div class="module-title-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
+          <h2 class="module-title">Módulo <span>Estoque</span></h2>
+        </div>
+        <p class="module-intro rv rv-d2">Gerencie seu inventário com precisão e nunca perca o controle sobre o que entra e sai, garantindo disponibilidade e rastreabilidade total de cada peça.</p>
+        <div class="module-objective rv rv-d3">
+          <div class="module-objective-label">Objetivo</div>
+          <p>Eliminar divergências de inventário, evitar rupturas de estoque e oferecer rastreabilidade completa dos produtos, desde a entrada até a venda ao cliente final.</p>
+        </div>
+      </div>
+      <div class="rv rv-d2">
+        <div class="subhead">Principais funcionalidades</div>
+        <div class="features-grid">
+          <div class="feature-item">Controle de entradas e saídas</div>
+          <div class="feature-item">Inventário em tempo real</div>
+          <div class="feature-item">Alertas de estoque mínimo</div>
+          <div class="feature-item">Rastreabilidade por lote</div>
+          <div class="feature-item">Cadastro de produtos</div>
+          <div class="feature-item">Movimentações por categoria</div>
+          <div class="feature-item">Relatório de giro</div>
+          <div class="feature-item">Integração com compras</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="subhead">Fluxo de utilização</div>
+      <div class="flow">
+        <div class="flow-step"><div class="flow-node">Recebimento</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Cadastro</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Armazenagem</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Baixa/Saída</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Relatórios</div></div>
+      </div>
+    </div>
+    <div class="rv rv-d2">
+      <div class="subhead" style="margin-top:2rem">Benefícios para a Ouro Gold 18K</div>
+      <div class="benefits-grid">
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Eliminação de perdas por desvio ou erro de inventário</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Disponibilidade garantida dos produtos mais procurados</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Rastreabilidade total de cada peça em estoque</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Redução de capital imobilizado em excesso</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULO: COMPRAS -->
+<section class="section module-section" id="compras">
+  <div class="container">
+    <div class="divider rv"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div class="module-header">
+      <div class="module-header-left">
+        <div class="section-label rv">Módulo 04</div>
+        <div class="module-title-wrap rv rv-d1">
+          <div class="module-title-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+          <h2 class="module-title">Módulo <span>Compras</span></h2>
+        </div>
+        <p class="module-intro rv rv-d2">Automatize todo o processo de aquisição de mercadorias e insumos, desde a solicitação até a aprovação e recebimento, com total rastreabilidade.</p>
+        <div class="module-objective rv rv-d3">
+          <div class="module-objective-label">Objetivo</div>
+          <p>Garantir que as compras sejam realizadas de forma estratégica, com comparação de fornecedores, controle de prazos e integração direta com o estoque e o financeiro.</p>
+        </div>
+      </div>
+      <div class="rv rv-d2">
+        <div class="subhead">Principais funcionalidades</div>
+        <div class="features-grid">
+          <div class="feature-item">Solicitações de compra</div>
+          <div class="feature-item">Cotações comparativas</div>
+          <div class="feature-item">Aprovação por alçada</div>
+          <div class="feature-item">Pedidos a fornecedores</div>
+          <div class="feature-item">Controle de entregas</div>
+          <div class="feature-item">Integração com estoque</div>
+          <div class="feature-item">Histórico de preços</div>
+          <div class="feature-item">Relatório de compras</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="subhead">Fluxo de utilização</div>
+      <div class="flow">
+        <div class="flow-step"><div class="flow-node">Solicitação</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Cotação</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Aprovação</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Pedido</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Recebimento</div></div>
+      </div>
+    </div>
+    <div class="rv rv-d2">
+      <div class="subhead" style="margin-top:2rem">Benefícios para a Ouro Gold 18K</div>
+      <div class="benefits-grid">
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Redução de custos com melhores negociações</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Processo de aprovação ágil e rastreável</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Histórico completo para negociações futuras</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Integração automática com estoque no recebimento</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- MÓDULO: CLIENTES -->
+<section class="section module-section" id="clientes">
+  <div class="container">
+    <div class="divider rv"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div class="module-header">
+      <div class="module-header-left">
+        <div class="section-label rv">Módulo 05</div>
+        <div class="module-title-wrap rv rv-d1">
+          <div class="module-title-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h2 class="module-title">Módulo <span>Clientes</span></h2>
+        </div>
+        <p class="module-intro rv rv-d2">Mantenha um cadastro completo e organizado de toda a sua carteira, com dados, preferências e histórico de compras de cada cliente consolidados.</p>
+        <div class="module-objective rv rv-d3">
+          <div class="module-objective-label">Objetivo</div>
+          <p>Centralizar todas as informações dos clientes para facilitar a segmentação, o atendimento personalizado e a criação de ações comerciais e de fidelização mais eficazes.</p>
+        </div>
+      </div>
+      <div class="rv rv-d2">
+        <div class="subhead">Principais funcionalidades</div>
+        <div class="features-grid">
+          <div class="feature-item">Cadastro completo</div>
+          <div class="feature-item">Histórico de compras</div>
+          <div class="feature-item">Segmentação avançada</div>
+          <div class="feature-item">Documentos e contratos</div>
+          <div class="feature-item">Limite de crédito</div>
+          <div class="feature-item">Endereços e contatos</div>
+          <div class="feature-item">Status e classificação</div>
+          <div class="feature-item">Relatório de carteira</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="subhead">Fluxo de utilização</div>
+      <div class="flow">
+        <div class="flow-step"><div class="flow-node">Cadastro</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Classificação</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Gestão</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Acompanhamento</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Relatórios</div></div>
+      </div>
+    </div>
+    <div class="rv rv-d2">
+      <div class="subhead" style="margin-top:2rem">Benefícios para a Ouro Gold 18K</div>
+      <div class="benefits-grid">
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Visão 360° de cada cliente em um só lugar</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Segmentação precisa para ações direcionadas</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Controle de inadimplência com limites de crédito</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Atendimento ágil com dados sempre atualizados</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULO: FORNECEDORES -->
+<section class="section module-section" id="fornecedores">
+  <div class="container">
+    <div class="divider rv"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div class="module-header">
+      <div class="module-header-left">
+        <div class="section-label rv">Módulo 06</div>
+        <div class="module-title-wrap rv rv-d1">
+          <div class="module-title-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></div>
+          <h2 class="module-title">Módulo <span>Fornecedores</span></h2>
+        </div>
+        <p class="module-intro rv rv-d2">Centralize informações, contratos e histórico de todos os fornecedores, facilitando negociações, avaliações e a gestão estratégica da cadeia de suprimentos.</p>
+        <div class="module-objective rv rv-d3">
+          <div class="module-objective-label">Objetivo</div>
+          <p>Fortalecer o relacionamento com fornecedores estratégicos, reduzir custos por meio de negociações informadas e garantir a continuidade do fornecimento para a operação.</p>
+        </div>
+      </div>
+      <div class="rv rv-d2">
+        <div class="subhead">Principais funcionalidades</div>
+        <div class="features-grid">
+          <div class="feature-item">Cadastro completo</div>
+          <div class="feature-item">Avaliação de desempenho</div>
+          <div class="feature-item">Histórico de pedidos</div>
+          <div class="feature-item">Contratos e prazos</div>
+          <div class="feature-item">Condições de pagamento</div>
+          <div class="feature-item">Documentos fiscais</div>
+          <div class="feature-item">Classificação por categoria</div>
+          <div class="feature-item">Relatório comparativo</div>
+          <div class="feature-item">Alerta de estoque mínimo por produto</div>
+          <div class="feature-item">Botão WhatsApp para pedido de orçamento</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="subhead">Fluxo de utilização</div>
+      <div class="flow">
+        <div class="flow-step"><div class="flow-node">Cadastro</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Qualificação</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Negociação</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Pedidos</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Avaliação</div></div>
+      </div>
+    </div>
+    <div class="rv rv-d2">
+      <div class="subhead" style="margin-top:2rem">Benefícios para a Ouro Gold 18K</div>
+      <div class="benefits-grid">
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Negociações mais vantajosas com dados históricos</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Diversificação estratégica da cadeia de fornecimento</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Avaliação contínua de qualidade e pontualidade</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Redução do risco de desabastecimento</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Alerta automático quando produto atinge estoque mínimo</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Orçamento solicitado ao fornecedor via WhatsApp em um clique, com produto e quantidade preenchidos automaticamente</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULO: RELATÓRIOS -->
+<section class="section module-section" id="relatorios">
+  <div class="container">
+    <div class="divider rv"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div class="module-header">
+      <div class="module-header-left">
+        <div class="section-label rv">Módulo 07</div>
+        <div class="module-title-wrap rv rv-d1">
+          <div class="module-title-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+          <h2 class="module-title">Módulo <span>Relatórios</span></h2>
+        </div>
+        <p class="module-intro rv rv-d2">Transforme dados operacionais em inteligência de negócio com relatórios completos, indicadores de performance e análises comparativas que embasam decisões estratégicas.</p>
+        <div class="module-objective rv rv-d3">
+          <div class="module-objective-label">Objetivo</div>
+          <p>Oferecer à gestão uma visão analítica consolidada de todos os módulos, eliminando planilhas manuais e garantindo que as decisões sejam sempre fundamentadas em dados reais.</p>
+        </div>
+      </div>
+      <div class="rv rv-d2">
+        <div class="subhead">Principais funcionalidades</div>
+        <div class="features-grid">
+          <div class="feature-item">Relatórios por módulo</div>
+          <div class="feature-item">Indicadores de performance</div>
+          <div class="feature-item">Comparativo de períodos</div>
+          <div class="feature-item">Exportação em PDF/Excel</div>
+          <div class="feature-item">Filtros avançados</div>
+          <div class="feature-item">Agendamento automático</div>
+          <div class="feature-item">Alertas de desvios</div>
+          <div class="feature-item">Análise de tendências</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="subhead">Fluxo de utilização</div>
+      <div class="flow">
+        <div class="flow-step"><div class="flow-node">Configuração</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Filtragem</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Geração</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Análise</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Decisão</div></div>
+      </div>
+    </div>
+    <div class="rv rv-d2">
+      <div class="subhead" style="margin-top:2rem">Benefícios para a Ouro Gold 18K</div>
+      <div class="benefits-grid">
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Decisões estratégicas baseadas em dados confiáveis</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Eliminação de planilhas manuais e retrabalho</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Identificação rápida de gargalos operacionais</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Visão histórica e preditiva do negócio</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULO: USUÁRIOS E PERMISSÕES -->
+<section class="section module-section" id="usuarios">
+  <div class="container">
+    <div class="divider rv"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div class="module-header">
+      <div class="module-header-left">
+        <div class="section-label rv">Módulo 08</div>
+        <div class="module-title-wrap rv rv-d1">
+          <div class="module-title-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <h2 class="module-title">Módulo <span>Usuários e Permissões</span></h2>
+        </div>
+        <p class="module-intro rv rv-d2">Controle quem acessa o quê dentro da plataforma, garantindo a segurança das informações e a rastreabilidade de cada ação realizada no sistema.</p>
+        <div class="module-objective rv rv-d3">
+          <div class="module-objective-label">Objetivo</div>
+          <p>Proteger as informações da empresa com controles de acesso granulares, garantindo que cada colaborador tenha acesso apenas ao que é necessário para o seu trabalho.</p>
+        </div>
+      </div>
+      <div class="rv rv-d2">
+        <div class="subhead">Principais funcionalidades</div>
+        <div class="features-grid">
+          <div class="feature-item">Perfis de acesso</div>
+          <div class="feature-item">Permissões por módulo</div>
+          <div class="feature-item">Log de auditoria</div>
+          <div class="feature-item">Autenticação segura</div>
+          <div class="feature-item">Gestão de equipes</div>
+          <div class="feature-item">Bloqueio por alçada</div>
+          <div class="feature-item">Histórico de ações</div>
+          <div class="feature-item">Controle de dispositivos</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="subhead">Fluxo de utilização</div>
+      <div class="flow">
+        <div class="flow-step"><div class="flow-node">Criação</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Perfil</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Permissões</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Monitoramento</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Auditoria</div></div>
+      </div>
+    </div>
+    <div class="rv rv-d2">
+      <div class="subhead" style="margin-top:2rem">Benefícios para a Ouro Gold 18K</div>
+      <div class="benefits-grid">
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Maior segurança e proteção de dados sensíveis</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Rastreabilidade total de quem fez o quê e quando</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Conformidade com boas práticas e LGPD</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Redução de erros operacionais por acesso restrito</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULO: DASHBOARD GERENCIAL -->
+<section class="section module-section" id="dashboard">
+  <div class="container">
+    <div class="divider rv"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div class="module-header">
+      <div class="module-header-left">
+        <div class="section-label rv">Módulo 09</div>
+        <div class="module-title-wrap rv rv-d1">
+          <div class="module-title-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <h2 class="module-title">Módulo <span>Dashboard Gerencial</span></h2>
+        </div>
+        <p class="module-intro rv rv-d2">Tenha uma visão executiva e em tempo real de todos os indicadores críticos do negócio em uma tela centralizada, projetada para a tomada de decisão ágil.</p>
+        <div class="module-objective rv rv-d3">
+          <div class="module-objective-label">Objetivo</div>
+          <p>Proporcionar à gestão e à diretoria uma visão unificada e atualizada do desempenho da empresa, eliminando a necessidade de consultar múltiplos sistemas ou relatórios.</p>
+        </div>
+      </div>
+      <div class="rv rv-d2">
+        <div class="subhead">Principais funcionalidades</div>
+        <div class="features-grid">
+          <div class="feature-item">Gráficos interativos</div>
+          <div class="feature-item">Alertas e notificações</div>
+          <div class="feature-item">Comparativo de períodos</div>
+          <div class="feature-item">Visão por departamento</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="subhead">Fluxo de utilização</div>
+      <div class="flow">
+        <div class="flow-step"><div class="flow-node">Acesso</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Visualização</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Análise</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Decisão</div></div>
+      </div>
+    </div>
+    <div class="rv rv-d2">
+      <div class="subhead" style="margin-top:2rem">Benefícios para a Ouro Gold 18K</div>
+      <div class="benefits-grid">
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Visão 360° da operação em tempo real</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Antecipação de problemas com alertas proativos</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Decisões mais rápidas e embasadas em dados</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Redução do tempo em reuniões de alinhamento</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULO: WHATSAPP -->
+<section class="section module-section" id="whatsapp">
+  <div class="container">
+    <div class="divider rv"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div class="module-header">
+      <div class="module-header-left">
+        <div class="section-label rv">Módulo 10</div>
+        <div class="module-title-wrap rv rv-d1">
+          <div class="module-title-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg></div>
+          <h2 class="module-title">Módulo <span>WhatsApp Automático</span></h2>
+        </div>
+        <p class="module-intro rv rv-d2">Automatize a comunicação com clientes e fornecedores diretamente pelo WhatsApp — sem esforço manual, com mensagens disparadas pelo próprio sistema nos momentos certos.</p>
+        <div class="module-objective rv rv-d3">
+          <div class="module-objective-label">Objetivo</div>
+          <p>Aumentar a satisfação do cliente com comunicação imediata pós-compra e agilizar o reabastecimento de estoque com alertas e pedidos de orçamento automáticos enviados ao fornecedor certo.</p>
+        </div>
+      </div>
+      <div class="rv rv-d2">
+        <div class="subhead">Principais funcionalidades</div>
+        <div class="features-grid">
+          <div class="feature-item">Confirmação de compra automática</div>
+          <div class="feature-item">Envio do código do pedido</div>
+          <div class="feature-item">Mensagem de agradecimento personalizada</div>
+          <div class="feature-item">Alerta de estoque mínimo atingido</div>
+          <div class="feature-item">Botão de pedido de orçamento ao fornecedor</div>
+          <div class="feature-item">Mensagem com produto e quantidade</div>
+          <div class="feature-item">Templates personalizáveis</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTOMAÇÃO 1: PÓS-COMPRA -->
+    <div class="rv" style="margin-bottom: 3rem">
+      <div class="subhead">Automação 1 — Confirmação de compra para o cliente</div>
+      <p style="font-size:14px; color:var(--muted); margin-bottom:1.25rem; line-height:1.65">Assim que o cliente finaliza a compra no sistema, uma mensagem é disparada automaticamente via WhatsApp com o agradecimento e o código do pedido.</p>
+      <div class="flow">
+        <div class="flow-step"><div class="flow-node">Compra finalizada</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Sistema detecta</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Disparo automático</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Cliente recebe no WhatsApp</div></div>
+      </div>
+      <div style="margin-top:1.5rem; background:var(--gold-pale); border:1px solid var(--border-strong); border-radius:var(--radius-sm); padding:1.5rem; max-width:480px">
+        <div style="font-size:11px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:.75rem">Exemplo de mensagem enviada ao cliente</div>
+        <p style="font-size:14px; color:var(--ink-2); line-height:1.7; font-style:italic">
+          "Olá, [Nome do Cliente]! 🌟<br>
+          Obrigado pela sua compra na <strong>Ouro Gold 18K</strong>.<br>
+          Seu pedido foi registrado com sucesso!<br><br>
+          📋 <strong>Código do pedido:</strong> #OG-20240615-0042<br><br>
+          Em breve entraremos em contato com mais informações. Qualquer dúvida, estamos à disposição."
+        </p>
+      </div>
+    </div>
+
+    <!-- AUTOMAÇÃO 2: ESTOQUE BAIXO / FORNECEDOR -->
+    <div class="rv rv-d1" style="margin-bottom: 3rem">
+      <div class="subhead">Automação 2 — Alerta de estoque e pedido de orçamento ao fornecedor</div>
+      <p style="font-size:14px; color:var(--muted); margin-bottom:1.25rem; line-height:1.65">Quando um produto atinge o estoque mínimo configurado, o sistema exibe um alerta e disponibiliza um botão para enviar pedido de orçamento diretamente ao fornecedor cadastrado para aquele produto, com o nome e a quantidade sugerida já preenchidos.</p>
+      <div class="flow">
+        <div class="flow-step"><div class="flow-node">Estoque mínimo atingido</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Alerta no sistema</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Clique "Solicitar orçamento"</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Fornecedor recebe no WhatsApp</div></div>
+      </div>
+      <div style="margin-top:1.5rem; background:var(--gold-pale); border:1px solid var(--border-strong); border-radius:var(--radius-sm); padding:1.5rem; max-width:480px">
+        <div style="font-size:11px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:.75rem">Exemplo de mensagem enviada ao fornecedor</div>
+        <p style="font-size:14px; color:var(--ink-2); line-height:1.7; font-style:italic">
+          "Olá, [Nome do Fornecedor]!<br>
+          Somos da <strong>Ouro Gold 18K</strong> e gostaríamos de solicitar um orçamento.<br><br>
+          📦 <strong>Produto:</strong> Anel Solitário 18K Modelo A<br>
+          🔢 <strong>Quantidade:</strong> 20 unidades<br><br>
+          Poderia nos enviar disponibilidade e prazo de entrega? Aguardamos seu retorno. Obrigado!"
+        </p>
+      </div>
+    </div>
+
+    <!-- AUTOMAÇÃO 3: CÓDIGO DE RASTREIO (PREMIUM) -->
+    <div class="rv rv-d2" style="margin-bottom: 3rem">
+      <div style="display:flex; align-items:center; gap:.75rem; margin-bottom:.5rem">
+        <div class="subhead" style="margin:0">Automação 3 — Envio do código de rastreio ao cliente</div>
+        <span style="font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; background:var(--gold); color:var(--white); border-radius:99px; padding:3px 12px; white-space:nowrap">Plano Premium</span>
+      </div>
+      <p style="font-size:14px; color:var(--muted); margin-bottom:1.25rem; line-height:1.65">Assim que o código de rastreio do pedido é gerado pela API de frete, o sistema o envia automaticamente ao cliente via WhatsApp — sem nenhuma ação manual necessária.</p>
+      <div class="flow">
+        <div class="flow-step"><div class="flow-node">API de frete gera o código</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Sistema recebe o código</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Disparo automático</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-node">Cliente recebe no WhatsApp</div></div>
+      </div>
+      <div style="margin-top:1.5rem; background:var(--gold-pale); border:1px solid var(--border-strong); border-radius:var(--radius-sm); padding:1.5rem; max-width:480px">
+        <div style="font-size:11px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:.75rem">Exemplo de mensagem enviada ao cliente</div>
+        <p style="font-size:14px; color:var(--ink-2); line-height:1.7; font-style:italic">
+          "Olá, [Nome do Cliente]! 📦<br>
+          O seu pedido <strong>#OG-20240615-0042</strong> foi despachado!<br><br>
+          🚚 <strong>Código de rastreio:</strong> BR123456789BR<br><br>
+          Acompanhe a entrega pelo site dos Correios ou da transportadora. Qualquer dúvida, estamos à disposição!"
+        </p>
+      </div>
+    </div>
+
+    <div class="rv rv-d2">
+      <div class="subhead" style="margin-top:2rem">Benefícios para a Ouro Gold 18K</div>
+      <div class="benefits-grid">
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Cliente recebe confirmação imediata e profissional no WhatsApp</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Zero esforço manual — mensagens disparadas pelo sistema automaticamente</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Reposição de estoque mais ágil com alerta e ação em um clique</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Código de rastreio enviado automaticamente ao cliente assim que gerado (Premium)</div></div>
+        <div class="benefit-card"><div class="benefit-dot"></div><div class="benefit-text">Comunicação profissional e padronizada com clientes e fornecedores</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="section" id="planos">
+  <div class="container">
+    <div class="divider rv"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div class="section-header rv" style="max-width:680px">
+      <div class="section-label">Investimento</div>
+      <h2 class="section-title">Escolha o plano <em style="font-style:italic; color:var(--gold-deep)">ideal</em> para o seu negócio</h2>
+      <p class="section-subtitle">Três opções desenhadas para diferentes momentos da operação. Todos os planos entregam um sistema exclusivo, desenvolvido sob medida para a Ouro Gold 18K.</p>
+    </div>
+
+    <div class="plans-grid rv rv-d1">
+
+      <!-- ESSENCIAL -->
+      <div class="plan-card">
+        <div class="plan-header">
+          <div class="plan-tier">Plano 01</div>
+          <div class="plan-name">Essencial</div>
+          <div class="plan-price-wrap">
+            <span class="plan-currency">R$</span>
+            <span class="plan-price">25.000</span>
+          </div>
+          <div class="plan-period">pagamento único · entrega única</div>
+          <p class="plan-desc">Operação básica funcionando: loja online, controle de estoque e gestão de vendas.</p>
+        </div>
+        <div class="plan-divider"></div>
+        <div class="plan-modules">
+          <div class="plan-module-group">Módulos incluídos</div>
+
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>E-commerce</strong> — vitrine com SEO completo, carrinho, checkout, gestão de pedidos online e integração com API de frete para geração de código de rastreio</div>
+          </div>
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Estoque</strong> — cadastro de produtos, entradas, saídas e alertas de estoque mínimo</div>
+          </div>
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Clientes</strong> — cadastro, histórico de compras e perfil do cliente</div>
+          </div>
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Usuários e Permissões</strong> — até 3 usuários com perfis de acesso</div>
+          </div>
+
+          <div class="plan-module-group">Não incluso</div>
+          <div class="plan-item off">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Financeiro
+          </div>
+          <div class="plan-item off">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Compras e Fornecedores
+          </div>
+          <div class="plan-item off">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Relatórios e Dashboard
+          </div>
+          <div class="plan-item off">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            WhatsApp Automático
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPLETO -->
+      <div class="plan-card featured">
+        <div class="plan-header">
+          <div class="plan-tier">Plano 02</div>
+          <div class="plan-name">Completo</div>
+          <div class="plan-price-wrap">
+            <span class="plan-currency">R$</span>
+            <span class="plan-price">35.000</span>
+          </div>
+          <div class="plan-period">pagamento único · entrega por fases</div>
+          <p class="plan-desc">Gestão integrada de ponta a ponta: financeiro, compras, fornecedores, relatórios e dashboard.</p>
+        </div>
+        <div class="plan-divider"></div>
+        <div class="plan-modules">
+          <div class="plan-module-group">Tudo do Essencial, mais</div>
+
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Financeiro</strong> — contas a pagar/receber, fluxo de caixa e conciliação financeira</div>
+          </div>
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Compras</strong> — registro de pedidos de compra, histórico e aprovações</div>
+          </div>
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Fornecedores</strong> — cadastro completo, alerta de estoque mínimo e pedidos de orçamento</div>
+          </div>
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Relatórios</strong> — vendas, estoque e financeiro com exportação em PDF/Excel</div>
+          </div>
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Dashboard Gerencial</strong> — visão centralizada dos principais indicadores do negócio</div>
+          </div>
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Usuários e Permissões</strong> — até 8 usuários com perfis de acesso personalizados</div>
+          </div>
+
+          <div class="plan-module-group">Não incluso</div>
+          <div class="plan-item off">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            WhatsApp Automático
+          </div>
+        </div>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="plan-card">
+        <div class="plan-header">
+          <div class="plan-tier">Plano 03</div>
+          <div class="plan-name">Premium</div>
+          <div class="plan-price-wrap">
+            <span class="plan-currency">R$</span>
+            <span class="plan-price">40.000</span>
+          </div>
+          <div class="plan-period">pagamento único · entrega por fases</div>
+          <p class="plan-desc">Sistema completo com automação via WhatsApp. Máxima eficiência operacional e inteligência no atendimento.</p>
+        </div>
+        <div class="plan-divider"></div>
+        <div class="plan-modules">
+          <div class="plan-module-group">Tudo do Completo, mais</div>
+
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>WhatsApp Automático</strong> — confirmação de compra com código, alerta de estoque, pedido de orçamento ao fornecedor e envio automático do código de rastreio ao cliente assim que gerado pela API de frete</div>
+          </div>
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Relatórios avançados</strong> — análises comparativas, tendências históricas e exportação completa</div>
+          </div>
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Dashboard completo</strong> — gráficos detalhados, filtros por período e comparativos</div>
+          </div>
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Usuários ilimitados</strong> — sem restrição de usuários, com perfis de acesso granulares</div>
+          </div>
+          <div class="plan-item on">
+            <svg class="plan-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Suporte prioritário</strong> — 3 meses de suporte dedicado pós-entrega inclusos</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Nota de rodapé dos planos -->
+    <div class="rv rv-d3" style="margin-top: 2.5rem; text-align:center;">
+      <p style="font-size:13px; color:var(--muted); max-width:600px; margin:0 auto; line-height:1.7;">
+        Todos os planos incluem sistema hospedado em nuvem, painel administrativo exclusivo e código-fonte proprietário. Upgrades entre planos disponíveis a qualquer momento. Hospedagem, domínio e manutenção mensal sob consulta.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ENCERRAMENTO -->
+<section class="section" id="encerramento" style="background: var(--ivory-2)">
+  <div class="container">
+    <div class="divider rv"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+    <div class="section-header rv" style="max-width:700px">
+      <div class="section-label">Resultados Esperados</div>
+      <h2 class="section-title">Uma plataforma que <em style="font-style:italic; color:var(--gold-deep)">transforma</em> a gestão</h2>
+      <p class="section-subtitle">A Ouro Gold 18K passa a operar com processos padronizados, dados confiáveis e total visibilidade sobre cada área do negócio.</p>
+    </div>
+
+    <div class="closing-grid rv rv-d1">
+      <div class="closing-card">
+        <div class="closing-card-title">Ganhos operacionais</div>
+        <ul class="closing-list">
+          <li>Centralização de todas as informações em um único sistema</li>
+          <li>Processos padronizados e sem retrabalho</li>
+          <li>Redução de erros operacionais e perdas financeiras</li>
+          <li>Aumento da produtividade em todas as áreas</li>
+        </ul>
+      </div>
+      <div class="closing-card">
+        <div class="closing-card-title">Controle e segurança</div>
+        <ul class="closing-list">
+          <li>Rastreabilidade completa de todas as operações</li>
+          <li>Maior segurança dos dados da empresa</li>
+          <li>Conformidade com boas práticas de gestão</li>
+          <li>Auditoria contínua e transparência nos processos</li>
+        </ul>
+      </div>
+      <div class="closing-card rv rv-d2">
+        <div class="closing-card-title">Inteligência e decisão</div>
+        <ul class="closing-list">
+          <li>Indicadores em tempo real para a gestão</li>
+          <li>Tomada de decisão baseada em dados confiáveis</li>
+          <li>Análises comparativas e tendências históricas</li>
+          <li>Previsibilidade financeira e operacional</li>
+        </ul>
+      </div>
+      <div class="closing-card rv rv-d2">
+        <div class="closing-card-title">Crescimento escalável</div>
+        <ul class="closing-list">
+          <li>Plataforma preparada para o crescimento do negócio</li>
+          <li>Novos módulos e integrações conforme necessário</li>
+          <li>Tecnologia que acompanha a evolução da empresa</li>
+          <li>Suporte e evolução contínua da solução</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 4rem; text-align: center;" class="rv rv-d3">
+      <div class="divider" style="margin-bottom:2.5rem"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+      <div style="display:inline-block; background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding: 3rem 4rem; box-shadow: var(--shadow);">
+        <div class="sage-logo" style="justify-content:center; margin-bottom:1.25rem">
+          <div class="sage-logo-mark">
+            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="9,1 17,5 17,13 9,17 1,13 1,5" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+              <polygon points="9,4 14,6.5 14,11.5 9,14 4,11.5 4,6.5" fill="#C9A84C" opacity=".25"/>
+              <circle cx="9" cy="9" r="2" fill="#C9A84C"/>
+            </svg>
+          </div>
+          <div class="sage-logo-text" style="text-align:left">
+            Sage Works
+            <small>Tecnologia & Inovação</small>
+          </div>
+        </div>
+        <p style="font-family:'Playfair Display',serif; font-size:1.35rem; color:var(--ink); font-weight:500; line-height:1.4; max-width:420px; margin:0 auto .75rem">Estamos prontos para transformar a gestão da Ouro Gold 18K.</p>
+        <p style="font-size:14px; color:var(--muted); font-style:italic">"Transformando processos em resultados através da tecnologia."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">Sage Works</div>
+    <div class="footer-divider"></div>
+    <div class="footer-sub">"Transformando processos em resultados através da tecnologia."</div>
+    <div style="height: 1rem"></div>
+    <div class="footer-client">Desenvolvido exclusivamente para Ouro Gold 18K</div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.rv').forEach(el => observer.observe(el));
+
+const sections = document.querySelectorAll('section[id]');
+const navObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    const link = document.getElementById('nl-' + e.target.id);
+    if (link) link.classList.toggle('active', e.isIntersecting);
+  });
+}, { threshold: 0.4 });
+sections.forEach(s => navObs.observe(s));
+</script>
+</body>
+</html>
